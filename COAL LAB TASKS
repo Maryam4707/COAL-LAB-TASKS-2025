@@ -1,0 +1,1711 @@
+# -COAL-LAB-TASKS-2025
+                              ...................LAB # 03......................
+                                          <<<<<<< TASK 01 >>>>>>>
+org 100H
+.data
+.code
+main proc
+mov dl, 'b'
+mov ah, 2h
+INT 21H
+main endp
+end main
+                       <<<<<<< TASK 02 >>>>>>>
+org 100H
+.data
+.code 
+main proc
+mov ah, 02h
+mov dl, 'M'
+INT 21H
+
+mov dl, 'A'
+INT 21H
+
+mov dl, 'R'
+INT 21H
+
+mov dl, 'Y'
+INT 21H
+
+mov dl, 'A'
+INT 21H
+
+mov dl, 'M' 
+
+INT 21H  
+main endp
+end main
+                                <<<<<<< TASK 03 >>>>>>>
+;to display single character
+org 100h
+.data
+.code
+main proc   
+    
+    mov dl,109
+     mov ah,1h
+     INT 21H
+     mov dl,97
+     mov ah,1h
+     INT 21H
+     mov dl,114
+     mov ah,1h
+     INT 21H
+     mov dl,121
+     mov ah,1h
+     INT 21H  
+     mov dl,97
+     mov ah,1h
+     INT 21H
+     mov dl,109
+     mov ah,1h
+     INT 21H
+      mov dl,109-32
+     mov ah,2h
+     INT 21H
+     mov dl,97-32
+     mov ah,2h
+     INT 21H
+     mov dl,114-32
+     mov ah,2h
+     INT 21H
+     mov dl,121-32
+     mov ah,2h
+     INT 21H
+      mov dl,97-32
+     mov ah,2h
+     INT 21H  
+     mov dl,109-32
+     mov ah,2h
+     INT 21H
+    main endp
+end main
+                                ...................LAB # 04......................
+                                         <<<<<<< TASK 01 >>>>>>>
+org 100h
+model small
+.stack 100h
+.data
+.code
+main proc
+    mov dl, '5'
+    mov ah,2
+    INT 21h
+    mov dl,'7'
+    mov ah,2
+    INT 21h
+    
+    mov dl, '1'
+    mov ah,2
+    INT 21h  
+    
+    mov dl, '6'
+    mov ah,2
+    INT 21h  
+    
+    mov dl, '9'
+    mov ah,2
+    INT 21h   
+   
+    
+   mov ah,4ch
+   INT 21h
+   main endp
+end main
+                                  <<<<<<< TASK 02 >>>>>>>
+org 100h
+.model small
+.stack 100h
+.data
+.code
+main proc
+    mov ah,1
+    INT 21h 
+    sub al,30h
+    
+    mov bl,al
+    mov ah,1
+    
+    INT 21h  
+    sub al,30h
+    add bl,al 
+    
+    add bl,30h
+    mov dl,bl
+    mov ah,2 
+    int 21h
+    mov ah,4ch
+    INT 21h
+    main endp
+end main
+                                                    ...................LAB # 05......................
+                                                             <<<<<<< TASK 01 >>>>>>>
+ORG 100h
+
+MOV AH, 01h
+INT 21h
+SUB AL, 30h
+MOV BL, AL
+
+MOV AH, 01h
+INT 21h
+SUB AL, 30h
+MOV BH, AL
+
+MOV AL, BH
+ADD AL, 30h
+MOV DL, AL
+MOV AH, 02h
+INT 21h
+
+MOV AL, BL
+ADD AL, 30h
+MOV DL, AL
+MOV AH, 02h
+INT 21h  
+end mainp
+endmain
+                                          <<<<<<< TASK 02 >>>>>>>
+org 100h
+.model small
+.data
+.code
+main proc
+   
+    MOV AH, 1h
+    INT 21h
+    SUB AL, 30h     
+    MOV BL, AL     
+    MUL BL          
+    ADD AL, 30h
+    MOV DL, AL
+    MOV AH, 02h
+    INT 21h
+    MOV AH, 4Ch
+    INT 21h
+
+main endp
+end main
+                                         <<<<<<< TASK 03 >>>>>>>
+org 100h
+.model small
+.data
+.code
+main proc
+    mov ds, ax
+    mov al, 3       
+    add al, 5      
+    sub al, 6     
+    add al, '0'    
+    mov ah, 09h
+    int 21h
+    mov ah, 02h
+    mov dl, al      
+    int 21h
+  mov ah, 09h
+    int 21h
+    mov ah, 4Ch
+    int 21h 
+end mainp
+endmain
+                                       <<<<<<< TASK 04 >>>>>>>
+ORG 100H  
+  .model small
+.data
+.code
+main proc
+
+MOV AH, 1    
+INT 21H      
+SUB AL, 30H  ; 
+MOV BL, AL   ; 
+
+MOV AH, 1    
+INT 21H      
+SUB AL, 30H  ; 
+MOV BH, AL   ; 
+
+XCHG BL, BH  
+ADD BL, 30H  ; 
+MOV DL, BL
+MOV AH, 2
+INT 21H
+
+MOV DL, ' '  ; 
+MOV AH, 2
+INT 21H
+
+ADD BH, 30H  ; 
+MOV DL, BH
+MOV AH, 2
+INT 21H
+
+MOV AH, 4CH  ; 
+INT 21H   
+    
+end mainp
+endmain
+                                        <<<<<<< TASK 05 >>>>>>>
+org 100h
+.model small
+.data
+.code
+main proc
+    mov ah, 1h       
+    int 21h           
+    add al, 30h       
+    mov dl, al       
+    mov ah, 2h
+    int 21h           
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                    ...................LAB # 06......................
+                                                             <<<<<<< TASK 01 >>>>>>>
+.MODEL SMALL
+.STACK 100H
+.DATA
+    cv_data DB 'Name: Maryam Saeed', 13, 10
+            DB 'Age: 21 Years', 13, 10
+            DB 'Degree: BS Software Engineering', 13, 10
+            DB 'Email: maryam.saeed4707@gmail.com', 13, 10
+            DB 'Phone: +123-456-7890', 13, 10
+            DB 'Address: 123 Main Street, City', 13, 10
+            DB 'Skills: C, C++, Java ', 13, 10
+            DB '--- End of CV ---', 13, 10, '$'
+
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV DX, OFFSET cv_data  
+    MOV AH, 09H; 
+    INT 21H; 
+
+    MOV AH, 4CH  
+    INT 21H
+
+MAIN ENDP
+END MAIN
+                                                <<<<<<< TASK 02 >>>>>>>
+.MODEL SMALL
+.STACK 100H
+.DATA
+    msg DB 'Enter a character: $'   
+    newLine DB 13, 10 , '$'        
+    output DB 'The user entered: $' 
+
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV DX, OFFSET msg
+    MOV AH, 09H
+    INT 21H
+    MOV AH, 01H
+    INT 21H
+    MOV BL, AL   
+    MOV DX, OFFSET newLine
+    MOV AH, 09H
+    INT 21H
+    MOV DX, OFFSET output
+    MOV AH, 09H
+    INT 21H
+    MOV DL, BL
+    MOV AH, 02H
+    INT 21H
+    MOV AH, 4CH
+    INT 21H
+
+MAIN ENDP
+END MAIN
+                                                  <<<<<<< TASK 03 >>>>>>>
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+   msg DB '$'
+
+.CODE 
+MAIN PROC
+    
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV AH, 01H          
+    INT 21H              
+    SUB AL, 20H           
+    MOV DL, AL            
+    MOV AH, 02H           
+    INT 21H
+    MOV DL, '  '           
+    MOV AH, 02H          
+    INT 21H
+    MOV AH, 4CH
+    INT 21H
+       MAIN ENDP
+END MAIN
+                                                 ...................LAB # 07......................
+                                                             <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+.code
+main proc
+ mov ah, 01h
+ int 21h
+ sub al, '0'
+ mov bl, al
+ mul bl ; AL * BL => AX = num^2 (square)
+ add al, '0'
+ mov dl, al
+ mov ah, 02h
+ int 21h
+ mov ah, 4Ch
+ int 21h
+main endp
+end main
+                                                <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+.data
+ msg1 db 'Enter a single-digit number: $'
+ msg2 db 13,10,'Cube is: $'
+ result db 5 dup('$')
+.code
+main:
+ mov ax, @data
+ mov ds, ax
+
+ lea dx, msg1
+ mov ah, 09h
+ int 21h
+
+ mov ah, 01h
+ int 21h
+ sub al, 30h
+ mov bl, al
+ mov bh, al
+ mul bl
+ mov bl, al
+ mov al, bh
+ mul bl
+
+ mov bx, 10
+ xor cx, cx
+store_digits:
+ xor dx, dx
+ div bx
+ add dl, 30h
+ push dx
+ inc cx
+ cmp al, 0
+ jne store_digits
+
+ lea dx, msg2
+ mov ah, 09h
+ int 21h
+print_digits:
+ pop dx
+ mov ah, 02h
+ int 21h
+ loop print_digits
+
+ mov ah, 4ch
+ int 21h
+main endp
+end main
+                                                 <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+.code
+main proc
+ mov ah, 01h
+ int 21h
+ sub al, '0'
+ mov bl, al
+ mov ah, 01h
+ int 21h
+ sub al, '0'
+ mul bl
+ add al, '0'
+ mov dl, al
+ mov ah, 02h
+ int 21h
+ mov ah, 4Ch
+ int 21h
+ main endp
+end main
+                                              <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+.data
+.code
+main proc
+ mov ah, 01h
+ int 21h
+ sub al, '4'
+ mov bl, al
+ mov ah, 01h
+ int 21h
+ sub al, '5'
+ mov dl, bl
+ mul al
+ mov bx, 2
+ div bx
+ add al, '0'
+ mov dl, al
+ mov ah, 02h
+ int 21h
+ mov ah, 4Ch
+ int 21h
+ main endp
+end main
+                                                 ...................LAB # 08......................
+                                                             <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+
+.data
+    newline db 13, 10, '$'   
+    msg db '0', '$'           
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 5          
+    mov bl, 1         
+
+print_loop:
+   
+    mov al, bl
+    add al, '0'
+    mov msg, al       
+
+  
+    mov dx, offset msg
+    mov ah, 09h
+    int 21h
+
+  
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+
+    add bl, 2         
+    loop print_loop
+
+   
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                  <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+
+.data
+    newline db 13,10,'$'   
+    msg db '0','$'          
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov bl, 8       
+    mov cx, 5        
+
+print_loop:
+    mov al, bl
+    add al, '0'     
+    mov msg, al
+
+  
+    mov dx, offset msg
+    mov ah, 09h
+    int 21h
+
+    
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+
+    sub bl, 2       
+    loop print_loop 
+
+   
+    mov ah, 4Ch
+    int 21h
+main endp
+
+end main
+                                       <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+    newline db 13,10,'$'  
+    msg db ' ', '$'        
+
+.code
+main:
+    mov ax, @data           
+    mov ds, ax
+
+    mov al, 1               
+    add al, 2               
+    add al, 3              
+
+
+    add al, '0'             
+    mov msg, al            
+    mov dx, offset msg     
+    mov ah, 09h             
+    int 21h                
+
+   
+    mov dx, offset newline 
+    mov ah, 09h            
+    int 21h                
+
+    
+    mov ah, 4Ch             
+    int 21h
+main endp
+end main
+                                                 <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+.data
+    newline db 13,10,'$'     
+    char db 'X','$'         
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+   
+    mov ah, 01h
+    int 21h
+    mov char, al            
+
+   
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+
+  
+    mov cx, 10
+
+print_loop:
+    mov ah, 09h
+    mov dx, offset char
+    int 21h
+
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+
+    loop print_loop
+
+    
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                             <<<<<<< TASK 05 >>>>>>>
+.model small
+.stack 100h
+
+.data
+    char db 'a'          
+    newline db 13,10,'$' 
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 26           
+
+print_loop:
+    mov dl, char        
+    mov ah, 02h         
+    int 21h           
+    inc char            
+    loop print_loop     
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                         ...................LAB # 09......................
+                                                                   <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+ A db 7
+ B db 3
+ msg1 db 'A > B$'
+ msg2 db 'A < B$'
+.code
+main proc
+ mov ax, @data
+ mov ds, ax
+ mov al, A
+ mov bl, B
+ cmp al, bl
+ ja greater
+ jb less
+ jmp exit
+greater:
+ mov dx, offset msg1
+ mov ah, 9
+ int 21h
+ jmp exit
+less:
+ mov dx, offset msg2
+ mov ah, 9
+ int 21h
+exit:
+ mov ah, 4ch
+ int 21h
+main endp
+end main
+                                                      <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+.data
+ msg_input db 'Enter a one-digit number (0-9): $'
+ msg_zero db 13, 10, 'The number is zero.$'
+ msg_positive db 13, 10, 'The number is positive.$'
+.code
+main proc
+ mov ax, @data
+ mov ds, ax
+ mov ah, 09h
+ mov dx, offset msg_input
+ int 21h
+ mov ah, 01h
+ int 21h
+ sub al, '0'
+ cmp al, 0
+ je is_zero
+ mov dx, offset msg_positive
+ mov ah, 09h
+ int 21h
+ jmp exit
+is_zero:
+ mov dx, offset msg_zero
+ mov ah, 09h
+ int 21h
+exit:
+ mov ah, 4ch
+ int 21h
+main endp
+end main
+                                                  <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+ msg_input db 'Enter a one-digit number (0-9): $'
+ msg_even db 13, 10, 'The number is even.$'
+ msg_odd db 13, 10, 'The number is odd.$'
+.code
+main proc
+ mov ax, @data
+ mov ds, ax
+ mov ah, 09h
+ mov dx, offset msg_input
+ int 21h
+ mov ah, 01h
+ int 21h
+ sub al, '0'
+ mov ah, 00h
+ mov bl, 2
+ div bl
+ cmp ah, 0
+ je even
+ mov dx, offset msg_odd
+ mov ah, 09h
+ int 21h
+ jmp exit
+even:
+ mov dx, offset msg_even
+ mov ah, 09h
+ int 21h
+exit:
+ mov ah, 4ch
+ int 21h
+main endp
+end main
+                                            <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+.data
+ i db 'Enter marks (0-9): $'
+ f db 13, 10, 'Need hard work.$'
+ s db 13, 10, 'Satisfactory.$'
+.code
+main proc
+ mov ax, @data
+ mov ds, ax
+ mov ah, 9
+ mov dx, offset i
+ int 21h
+ mov ah, 1
+ int 21h
+ sub al, '0'
+ cmp al, 5
+ jl low
+ mov dx, offset s
+ mov ah, 9
+ int 21h
+ jmp done
+low:
+ mov dx, offset f
+ mov ah, 9
+ int 21h
+done:
+ mov ah, 4ch
+ int 21h
+main endp
+end main
+                                                        ...................LAB # 10......................
+                                                                   <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+array db 10, 20, 30, 40, 50
+newline db 13, 10, '$'
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+    mov si, 0
+display_loop:
+    mov al, [array + si]
+    call print_number
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+    inc si
+    cmp si, 5
+    jne display_loop
+    mov ah, 4Ch
+    int 21h
+main endp
+print_number proc
+    push ax
+    push bx
+    push cx
+    mov cx, 0
+    mov bl, 10
+convert_loop:
+    mov ah, 0
+    div bl
+    push ax
+    inc cx
+    cmp al, 0
+    jne convert_loop
+print_digits:
+    pop ax
+    mov dl, ah
+    add dl, '0'
+    mov ah, 02h
+    int 21h
+    loop print_digits
+    pop cx
+    pop bx
+    pop ax
+    ret
+print_number 
+main endp
+end main
+                                              <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+.data
+array db 'H', 'e', 'l', 'l', 'o'
+newline db 13, 10, '$'
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+    xor si, si
+
+print_loop:
+    mov dl, [array + si]
+    mov ah, 02h
+    int 21h
+
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+
+    inc si
+    cmp si, 5
+    jne print_loop
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+    array db 5 dup('#')
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+    mov si, 0
+print_loop:
+    cmp si, 5
+    je done
+    mov dl, [array + si]
+    mov ah, 02h
+    int 21h
+    inc si
+    jmp print_loop
+done:
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+.data
+array db 5 dup(0)
+newline db 13, 10, '$'
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+    mov si, 0
+
+input_loop:
+    mov ah, 01h
+    int 21h
+    mov [array + si], al
+    inc si
+    cmp si, 5
+    jne input_loop
+
+    mov si, 0
+display_loop:
+    mov dl, [array + si]
+    mov ah, 02h
+    int 21h
+    mov dx, offset newline
+    mov ah, 09h
+    int 21h
+    inc si
+    cmp si, 5
+    jne display_loop
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                         ...................LAB # 11......................
+                                                                   <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+arr db 10 dup(0)
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+    mov cx, 10
+    mov si, 0
+
+input_loop:
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov arr[si], al
+    test al, 1
+    jnz skip_push
+    cmp al, 6
+    jge skip_push
+    xor ah, ah
+    push ax
+skip_push:
+    inc si
+    loop input_loop
+
+display_loop:
+    cmp sp, 100h
+    je exit
+    pop ax
+    add al, '0'
+    mov dl, al
+    mov ah, 2
+    int 21h
+    mov dl, 0Dh
+    mov ah, 2
+    int 21h
+    mov dl, 0Ah
+    mov ah, 2
+    int 21h
+    jmp display_loop
+
+exit:
+    mov ah, 4ch
+    int 21h
+main endp
+end main
+                                                    <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+
+.data
+    msg db 'Original array: $'
+    reverse_msg db 'Reversed array: $'
+    newline db 0Ah, 0Dh, '$'
+    array db 5, 4, 3, 2, 1
+    temp db 5 dup(0)
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov ah, 09h
+    mov dx, offset msg
+    int 21h
+
+    mov si, offset array
+    mov cx, 5
+print_original_array:
+    mov al, [si]
+    add al, 30h
+    mov dl, al
+    mov ah, 02h
+    int 21h
+    inc si
+    loop print_original_array
+
+    mov ah, 09h
+    mov dx, offset newline
+    int 21h
+
+    mov si, offset array
+    mov cx, 5
+push_array:
+    mov al, [si]
+    push ax
+    inc si
+    loop push_array
+
+    mov ah, 09h
+    mov dx, offset reverse_msg
+    int 21h
+
+    mov si, offset temp
+    mov cx, 5
+pop_and_store:
+    pop ax
+    mov [si], al
+    inc si
+    loop pop_and_store
+
+    mov si, offset temp
+    mov cx, 5
+print_reversed_array:
+    mov al, [si]
+    add al, 30h
+    mov dl, al
+    mov ah, 02h
+    int 21h
+    inc si
+    loop print_reversed_array
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                              <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+values db 10 dup(0)
+count db 0
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    ; Input 10 values
+    mov cx, 10
+    lea si, values
+input_loop:
+    mov ah, 01h
+    int 21h
+    sub al, 30h
+    mov [si], al
+    inc si
+    loop input_loop
+
+    ; Find even values and push them to stack
+    lea si, values
+    mov cx, 10
+find_even_loop:
+    mov al, [si]
+    test al, 1
+    jnz not_even
+    push ax
+    inc count
+not_even:
+    inc si
+    loop find_even_loop
+
+    ; Pop and display values less than 6
+    mov cl, count
+    mov ch, 0
+display_loop:
+    pop ax
+    cmp al, 6
+    jl display_value
+    loop display_loop
+    jmp exit
+
+display_value:
+    add al, 30h
+    mov dl, al
+    mov ah, 02h
+    int 21h
+    mov dl, 0Dh 
+    mov ah, 02h
+    int 21h
+    mov dl, 0Ah 
+    mov ah, 02h
+    int 21h
+    loop display_loop
+
+exit:
+    mov ah, 4ch
+    int 21h
+main endp
+end main
+                                                  <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+
+.data
+    msg db 'Original array: $'
+    reverse_msg db 'Reversed array: $'
+    newline db 0Ah, 0Dh, '$'
+    array db 5, 4, 3, 2, 1
+    temp db 5 dup(0)
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    mov ah, 09h
+    mov dx, offset msg
+    int 21h
+
+    mov si, offset array
+    mov cx, 5
+print_original_array:
+    mov al, [si]
+    add al, 30h
+    mov dl, al
+    mov ah, 02h
+    int 21h
+    inc si
+    loop print_original_array
+
+    mov ah, 09h
+    mov dx, offset newline
+    int 21h
+
+    mov si, offset array
+    mov cx, 5
+push_array:
+    mov al, [si]
+    push ax
+    inc si
+    loop push_array
+
+    mov ah, 09h
+    mov dx, offset reverse_msg
+    int 21h
+
+    mov si, offset temp
+    mov cx, 5
+pop_and_store:
+    pop ax
+    mov [si], al
+    inc si
+    loop pop_and_store
+
+    mov si, offset temp
+    mov cx, 5
+print_reversed_array:
+    mov al, [si]
+    add al, 30h
+    mov dl, al
+    mov ah, 02h
+    int 21h
+    inc si
+    loop print_reversed_array
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                           ...................LAB # 12......................
+                                                                   <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+.code
+main proc
+    mov bx, 5      
+    mov cx, 5     
+L1:
+    push cx       
+
+    mov cx, bx     
+L2:
+    mov dl, '*'
+    mov ah, 2
+    int 21h
+    loop L2
+
+   
+    mov dl, 13
+    mov ah, 2
+    int 21h
+    mov dl, 10
+    mov ah, 2
+    int 21h
+
+    dec bx         
+    pop cx        
+    loop L1
+
+    mov ah, 4Ch    
+    int 21h
+main endp
+end main
+                                                        <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+.data
+newline db 13, 10, '$'
+space db ' '
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 1
+
+row_loop:
+    mov bx, cx
+
+print_num:
+    mov ah, 2
+    mov dl, cl
+    add dl, 30h
+    int 21h
+
+    cmp bx, 1
+    je no_space
+
+    mov ah, 2
+    mov dl, space
+    int 21h
+
+no_space:
+    dec bx
+    jnz print_num
+
+    mov ah, 9
+    mov dx, offset newline
+    int 21h
+
+    inc cx
+    cmp cx, 6
+    jne row_loop
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                       <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+.data
+newline db 13, 10, '$'
+space db ' '
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 5
+
+row_loop:
+    mov bx, 5
+
+col_loop:
+    mov ah, 2
+    mov dl, '1'
+    int 21h
+
+    cmp bx, 1
+    je no_space
+
+    mov ah, 2
+    mov dl, space
+    int 21h
+
+no_space:
+    dec bx
+    jnz col_loop
+
+    mov ah, 9
+    mov dx, offset newline
+    int 21h
+
+    dec cx
+    jnz row_loop
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                 <<<<<<< TASK 04 >>>>>>>
+.model small
+.stack 100h
+.data
+newline db 13, 10, '$'
+space db ' '
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov cx, 1
+
+row_loop:
+    mov bx, 1
+
+col_loop:
+    mov ah, 2
+    mov dl, bl
+    add dl, 30h
+    int 21h
+
+    cmp bx, cx
+    je no_space
+
+    mov ah, 2
+    mov dl, space
+    int 21h
+
+no_space:
+    inc bx
+    cmp bx, cx
+    jle col_loop
+
+    mov ah, 9
+    mov dx, offset newline
+    int 21h
+
+    inc cx
+    cmp cx, 6
+    jne row_loop
+
+    mov ah, 4Ch
+    int 21h
+main endp
+end main
+                                                       ...................LAB # 13......................
+                                                                   <<<<<<< TASK 01 >>>>>>>
+.model small
+.stack 100h
+.data
+    num1 db ?
+    num2 db ?
+    msg1 db 'Enter first number: $'
+    msg2 db 'Enter second number: $'
+    msg_add db 'Addition: $'
+    msg_sub db 'Subtraction: $'
+    msg_mul db 'Multiplication: $'
+    msg_div db 'Division: $'
+    msg_rem db 'Remainder: $'
+    newline db 0Dh, 0Ah, '$'
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    ; Take input of first number
+    lea dx, msg1
+    mov ah, 09h
+    int 21h
+    mov ah, 01h
+    int 21h
+    sub al, 48
+    mov num1, al
+
+    ; Take input of second number
+    lea dx, msg2
+    mov ah, 09h
+    int 21h
+    mov ah, 01h
+    int 21h
+    sub al, 48
+    mov num2, al
+
+    ; Perform arithmetic operations
+    call addition
+    lea dx, newline
+    mov ah, 09h
+    int 21h
+    call subtraction
+    lea dx, newline
+    mov ah, 09h
+    int 21h
+    call multiplication
+    lea dx, newline
+    mov ah, 09h
+    int 21h
+    call division
+
+    ; Exit program
+    mov ah, 4Ch
+    int 21h
+main endp
+
+; Addition function
+addition proc
+    lea dx, msg_add
+    mov ah, 09h
+    int 21h
+    mov al, num1
+    add al, num2
+    call print_num
+    ret
+addition endp
+
+; Subtraction function
+subtraction proc
+    lea dx, msg_sub
+    mov ah, 09h
+    int 21h
+    mov al, num1
+    sub al, num2
+    call print_num
+    ret
+subtraction endp
+
+; Multiplication function
+multiplication proc
+    lea dx, msg_mul
+    mov ah, 09h
+    int 21h
+    mov al, num1
+    mov bl, num2
+    mul bl
+    call print_num
+    ret
+multiplication endp
+
+; Division function
+division proc
+    lea dx, msg_div
+    mov ah, 09h
+    int 21h
+    mov al, num1
+    mov ah, 0
+    mov bl, num2
+    mov bh, 0
+    div bl
+    call print_num
+    lea dx, newline
+    mov ah, 09h
+    int 21h
+    lea dx, msg_rem
+    mov ah, 09h
+    int 21h
+    mov al, ah
+    call print_num
+    ret
+division endp
+
+; Function to print a number
+print_num proc
+    aam
+    add ax, 3030h
+    mov bx, ax
+    mov dl, bh
+    mov ah, 02h
+    int 21h
+    mov dl, bl
+    mov ah, 02h
+    int 21h
+    ret
+print_num endp
+end main
+                                                  <<<<<<< TASK 02 >>>>>>>
+.model small
+.stack 100h
+
+.data
+msg1 db 'Enter X (0-9): $'
+msg2 db 13,10,'Enter Y (0-9): $'
+msg3 db 13,10,'Enter Z (0-9): $'
+msgResult db 13,10,'Result (X+Y-Z-1): $'
+minusSign db '-$'
+
+x db ?
+y db ?
+z db ?
+result db ?
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+    mov dx, offset msg1
+    mov ah, 9
+    int 21h
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov x, al
+
+    mov dx, offset msg2
+    mov ah, 9
+    int 21h
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov y, al
+
+    mov dx, offset msg3
+    mov ah, 9
+    int 21h
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov z, al
+
+    call calculate_expr
+
+    mov dx, offset msgResult
+    mov ah, 9
+    int 21h
+
+    cmp result, 0
+    jns display_result
+
+    mov dx, offset minusSign
+    mov ah, 9
+    int 21h
+
+    mov al, result
+    neg al
+    jmp print_result
+
+display_result:
+    mov al, result
+
+print_result:
+    add al, '0'
+    mov dl, al
+    mov ah, 2
+    int 21h
+
+    mov ah, 4ch
+    int 21h
+main endp
+
+calculate_expr proc
+    mov al, x
+    add al, y
+    sub al, z
+    sub al, 1
+    mov result, al
+    ret
+calculate_expr endp
+end main
+                                                  <<<<<<< TASK 03 >>>>>>>
+.model small
+.stack 100h
+
+.data
+msg1 db 'Enter first digit (0-9): $'
+msg2 db 13,10,'Enter second digit (0-9): $'
+msg3 db 13,10,'Enter third digit (0-9): $'
+msgResult db 13,10,'Result (product): $'
+
+num1 db ?
+num2 db ?
+num3 db ?
+result dw ?
+
+.code
+main proc
+    mov ax, @data
+    mov ds, ax
+
+   
+    mov dx, offset msg1
+    mov ah, 9
+    int 21h
+
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov num1, al
+
+   
+    mov dx, offset msg2
+    mov ah, 9
+    int 21h
+
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov num2, al
+
+   
+    mov dx, offset msg3
+    mov ah, 9
+    int 21h
+
+    mov ah, 1
+    int 21h
+    sub al, '0'
+    mov num3, al
+
+  
+    call multiply_three
+
+  
+    mov dx, offset msgResult
+    mov ah, 9
+    int 21h
+
+   
+    mov ax, result      
+
+   
+    mov cx, 10
+    xor dx, dx
+    div cx               
+    mov bl, ah          
+    mov ah, 0
+    div cx              
+    mov cl, ah           
+    mov ch, al           
+
+   
+    cmp ch, 0
+    je skip_hundred
+    add ch, '0'
+    mov dl, ch
+    mov ah, 2
+    int 21h
+skip_hundred:
+
+   
+    add cl, '0'
+    mov dl, cl
+    mov ah, 2
+    int 21h
+
+   
+    add bl, '0'
+    mov dl, bl
+    mov ah, 2
+    int 21h
+
+   
+    mov ah, 4ch
+    int 21h
+main endp
+
+
+multiply_three proc
+    mov al, num1
+    mov bl, num2
+    mul bl         
+
+    mov bl, num3
+    mul bl         
+    mov result, ax
+    ret
+multiply_three endp
+end main
+                                          ...................LAB # 14......................
+                                                     <<<<<<< TASK 01 >>>>>>>  
+; Name: maryam saeed
+; SAP ID: 57169
+; Carry flag
+ORG 100h
+MOV AL, 0Fh
+MOV BL, 0F1h
+ADD AL, BL
+RET
+; Change: A carry is generated during the addition, setting the Carry Flag.Carry
+Flag (CF) is SET because the result exceeds 8 bits
+
+                                                   <<<<<<< TASK 02 >>>>>>>  
+; Name: maryam saeed
+; SAP ID: 57169
+; Sign flag
+ORG 100h
+MOV AL, 80h
+MOV BL, 01h
+ADD AL, BL
+RET
+; Change: AL starts with a negative value (80h). Adding 01h results in a negative result
+(81h), setting the Sign flag
+
+                                            <<<<<<< TASK 03 >>>>>>>
+; Name: maryam saeed
+; SAP ID: 57169
+ORG 100h
+MOV AL, 7Fh
+MOV BL, 01h
+ADD AL, BL
+RET
+; Change: Adding two large positive numbers (7Fh and 01h) causes the result to overflow,
+setting the Overflow flag.
+
+                                              <<<<<<< TASK 04 >>>>>>>
+; Name: Maryam Saeed
+; SAP ID: 57169
+; Zero flag
+ORG 100h
+MOV AL, 5Ah
+SUB AL, 5Ah
+RET
+; Change: AL is subtracted by the same value, result becomes 00h.
+; Zero Flag (ZF) is SET because the result of the operation is zero.
